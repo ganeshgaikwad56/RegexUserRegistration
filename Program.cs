@@ -8,16 +8,15 @@ namespace RegexDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome User Registration Account Program File");
-            //UserRegistration registration = new UserRegistration();
-            //Console.WriteLine("Enter Your Name");
-            //string value = Console.ReadLine();
-            //bool match = registration.ValidateName(value);
+            PasswordRules registration = new PasswordRules();
+            Console.WriteLine("Enter Your password");
+            string value = Console.ReadLine();
+            bool match = registration.ValidatePass(value);
 
-            //if (match)
-            //    Console.WriteLine("Name Matched with given criteria");
-            //else
-            //    Console.WriteLine("Pattern not Matched with given criteria should first name start with Capital and has min 3 charecters.");
+            if (match)
+                Console.WriteLine("Password Matched with given criteria");
+            else
+                Console.WriteLine("Pattern of Password not Matched with given criteria");
 
         }
     }
