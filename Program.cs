@@ -8,15 +8,41 @@ namespace RegexDemo
     {
         static void Main(string[] args)
         {
-            PasswordRules registration = new PasswordRules();
-            Console.WriteLine("Enter Your password");
-            string value = Console.ReadLine();
-            bool match = registration.ValidatePass(value);
-
-            if (match)
-                Console.WriteLine("Password Matched with given criteria");
-            else
-                Console.WriteLine("Pattern of Password not Matched with given criteria");
+            //Display Welcome message
+            Console.WriteLine("Welcome to the user registration programs");
+            Console.WriteLine("choose an choice");
+            Console.WriteLine("\n1. First Name \n2. Last Name \n3. Email-ID \n4.Mobile Format \n5.Valid Password \n6.Exit");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            switch (choice)
+            {
+                //UC-1
+                case 1:
+                    UserInfo.ValidateFirstName();
+                    break;
+                //UC-2
+                case 2:
+                    UserInfo.ValidateLastName();
+                    break;
+                //UC-3
+                case 3:
+                    UserInfo.ValidateEmail();
+                    break;
+                //UC-4
+                case 4:
+                    UserInfo.ValidateMobileNumber();
+                    break;
+                //UC-5 UC-6, UC-7, UC-8
+                case 5:
+                    UserInfo.ValidatePassword();
+                    break;
+                case 6:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("choose a right option");
+                    break;
+            }
+            Console.ReadLine();
 
         }
     }
